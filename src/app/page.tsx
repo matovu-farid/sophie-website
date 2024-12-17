@@ -1,6 +1,11 @@
 import { Button } from "src/components/ui/button";
 import Link from "next/link";
-import { Card, CardContent, CardHeader, CardTitle } from "src/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+} from "src/components/ui/card";
 import { Check } from "lucide-react";
 
 export default function HomePage() {
@@ -14,9 +19,10 @@ export default function HomePage() {
               Your Cleaning Needs—Our Priority
             </h1>
             <p className="mb-8 text-xl text-muted-foreground">
-              We offer professional residential and commercial cleaning services personalized 
-              to your unique requirements. Our flexible scheduling, in-person walkthroughs, 
-              and transparent pricing ensure that you get just what you need at a price you can trust.
+              We offer professional residential and commercial cleaning services
+              personalized to your unique requirements. Our flexible scheduling,
+              in-person walkthroughs, and transparent pricing ensure that you
+              get just what you need at a price you can trust.
             </p>
             <Button size="lg" asChild className="mr-4">
               <Link href="/quote">Get a Free Quote</Link>
@@ -38,20 +44,24 @@ export default function HomePage() {
             {[
               {
                 title: "Customized Plans",
-                description: "Every home or business is different—let us tailor a cleaning plan for yours."
+                description:
+                  "Every home or business is different—let us tailor a cleaning plan for yours.",
               },
               {
                 title: "Transparent Pricing",
-                description: "We offer in-person walkthroughs to give you the most accurate quote."
+                description:
+                  "We offer in-person walkthroughs to give you the most accurate quote.",
               },
               {
                 title: "Flexible Scheduling",
-                description: "From weekly to monthly or as-needed service, we work around your timetable."
+                description:
+                  "From weekly to monthly or as-needed service, we work around your timetable.",
               },
               {
                 title: "Trusted Professionals",
-                description: "Our cleaners are trained, vetted, and committed to ensuring your space is spotless."
-              }
+                description:
+                  "Our cleaners are trained, vetted, and committed to ensuring your space is spotless.",
+              },
             ].map((feature) => (
               <Card key={feature.title}>
                 <CardHeader>
@@ -80,10 +90,10 @@ export default function HomePage() {
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground">
-                  Keep your apartment or house pristine with our thorough, eco-friendly 
-                  cleaning methods. We handle everything from kitchens and bathrooms to 
-                  living spaces and bedrooms—so you can come home to a fresh, clean 
-                  environment every day.
+                  Keep your apartment or house pristine with our thorough,
+                  eco-friendly cleaning methods. We handle everything from
+                  kitchens and bathrooms to living spaces and bedrooms—so you
+                  can come home to a fresh, clean environment every day.
                 </p>
               </CardContent>
             </Card>
@@ -93,9 +103,10 @@ export default function HomePage() {
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground">
-                  Our commercial cleaning services keep your office or business space 
-                  tidy and professional. From lobbies and common areas to break rooms 
-                  and private offices, we ensure your workspace is both welcoming and productive.
+                  Our commercial cleaning services keep your office or business
+                  space tidy and professional. From lobbies and common areas to
+                  break rooms and private offices, we ensure your workspace is
+                  both welcoming and productive.
                 </p>
               </CardContent>
             </Card>
@@ -109,9 +120,10 @@ export default function HomePage() {
           <div className="mx-auto max-w-3xl text-center">
             <h2 className="mb-6 text-3xl font-bold">Pricing Tailored to You</h2>
             <p className="mb-8 text-lg text-muted-foreground">
-              We believe in fair, upfront pricing. That's why we schedule an in-person 
-              walkthrough of your property before providing a quote. Our pricing considers 
-              square footage, specific cleaning needs, and any special circumstances.
+              We believe in fair, upfront pricing. That&apos;s why we schedule
+              an in-person walkthrough of your property before providing a
+              quote. Our pricing considers square footage, specific cleaning
+              needs, and any special circumstances.
             </p>
             <Button size="lg" asChild>
               <Link href="/quote">Schedule a Walkthrough</Link>
@@ -121,12 +133,15 @@ export default function HomePage() {
       </section>
 
       {/* CTA Section */}
-      <section className="bg-primary text-primary-foreground py-20">
+      <section className="bg-primary py-20 text-primary-foreground">
         <div className="container text-center">
-          <h2 className="mb-6 text-3xl font-bold">Discover the Abia Cleaning Difference</h2>
+          <h2 className="mb-6 text-3xl font-bold">
+            Discover the Abia Cleaning Difference
+          </h2>
           <p className="mx-auto mb-8 max-w-2xl text-xl">
-            Our goal is simple: Provide consistent, high-quality cleaning at a fair price. 
-            Let us handle the mess so you can focus on what matters most.
+            Our goal is simple: Provide consistent, high-quality cleaning at a
+            fair price. Let us handle the mess so you can focus on what matters
+            most.
           </p>
           <Button size="lg" variant="secondary" asChild>
             <Link href="/contact">Contact Us Today</Link>
