@@ -6,7 +6,7 @@ import {
   CardHeader,
   CardTitle,
 } from "src/components/ui/card";
-import { Check } from "lucide-react";
+import { Check, Clock } from "lucide-react";
 
 export default function HomePage() {
   return (

@@ -4,8 +4,8 @@ import { type Metadata } from "next";
 import { Navbar } from "src/components/layout/navbar";
 
 export const metadata: Metadata = {
-  title: "Albia Cleaning Services LLC",
-  description: "Professional residential and commercial cleaning services",
+  title: "Abia Cleaning Services LLC",
+  description: "Professional residential and commercial cleaning services in Billerica, MA",
   icons: [{ rel: "icon", url: "/favicon.ico" }],
 };
 
