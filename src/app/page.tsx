@@ -135,7 +135,7 @@ export default function HomePage() {
       {/* CTA Section */}
       <section className="bg-primary py-20 text-primary-foreground">
         <div className="container text-center">
-          <h2 className="mb-6 text-3xl font-bold">
+          <h2 className="mb-6 text-3xl font-bold text-white">
             Discover the Abia Cleaning Difference
           </h2>
           <p className="mx-auto mb-8 max-w-2xl text-xl">
