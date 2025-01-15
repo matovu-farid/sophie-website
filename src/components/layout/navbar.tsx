@@ -15,7 +15,7 @@ export function Navbar() {
     <div className="border-b">
       <div className="container flex h-16 items-center justify-between">
         <Link href="/" className="text-2xl font-bold">
-          Albia Cleaning
+          Abia Cleaning
         </Link>
         <NavigationMenu>
           <NavigationMenuList className="flex gap-6">

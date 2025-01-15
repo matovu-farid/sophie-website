@@ -6,8 +6,18 @@ import {
   CardTitle,
 } from "src/components/ui/card";
 
+interface Service {
+  category: string;
+  items: {
+    title: string;
+    duration: string;
+    pricing?: string;
+    features: string[];
+  }[];
+}
+
 export default function ServicesPage() {
-  const services = [
+  const services: Service[] = [
     {
       category: "Commercial Services",
       items: [
@@ -113,6 +123,7 @@ export default function ServicesPage() {
             "Custom cleaning solutions",
             "Additional services upon request",
           ],
+          duration: "To be discussed",
         },
       ],
     },
