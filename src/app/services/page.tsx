@@ -162,7 +162,7 @@ export default function ServicesPage() {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -20 }}
-                viewport={{ once: false, margin: "-100px" }}
+                viewport={{ once: false }}
                 transition={{ duration: 0.5, delay: categoryIndex * 0.2 }}
               >
                 <h2 className="mb-8 text-2xl font-bold">{category.category}</h2>
@@ -174,7 +174,7 @@ export default function ServicesPage() {
                         initial={{ opacity: 0, scale: 0.95 }}
                         whileInView={{ opacity: 1, scale: 1 }}
                         exit={{ opacity: 0, scale: 0.9 }}
-                        viewport={{ once: false, margin: "-50px" }}
+                        viewport={{ once: false }}
                         transition={{
                           duration: 0.4,
                           delay: categoryIndex * 0.1 + serviceIndex * 0.1,

@@ -138,9 +138,29 @@ export default function HomePage() {
               ].map((service, index) => (
                 <motion.div
                   key={service.title}
-                  initial={{ opacity: 0, x: index === 0 ? -20 : 20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  exit={{ opacity: 0, x: index === 0 ? -20 : 20 }}
+                  initial={{
+                    opacity: 0,
+                    x: 0,
+                    y: 20,
+                    ...(window.innerWidth >= 768 && {
+                      x: index === 0 ? -20 : 20,
+                      y: 0,
+                    }),
+                  }}
+                  whileInView={{
+                    opacity: 1,
+                    x: 0,
+                    y: 0,
+                  }}
+                  exit={{
+                    opacity: 0,
+                    x: 0,
+                    y: -20,
+                    ...(window.innerWidth >= 768 && {
+                      x: index === 0 ? -20 : 20,
+                      y: 0,
+                    }),
+                  }}
                   transition={{ duration: 0.5 }}
                 >
                   <Card className="bg-white">
