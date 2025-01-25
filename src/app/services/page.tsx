@@ -1,4 +1,6 @@
+"use client";
 import { Clock, Check } from "lucide-react";
+import { motion, AnimatePresence } from "motion/react";
 import {
   Card,
   CardContent,
@@ -132,47 +134,89 @@ export default function ServicesPage() {
   return (
     <main className="py-20">
       <div className="container">
-        <h1 className="mb-4 text-center text-4xl font-bold">Our Services</h1>
-        <p className="mx-auto mb-16 max-w-2xl text-center text-lg text-muted-foreground">
+        <motion.h1
+          className="mb-4 text-center text-4xl font-bold"
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+        >
+          Our Services
+        </motion.h1>
+
+        <motion.p
+          className="mx-auto mb-16 max-w-2xl text-center text-lg text-muted-foreground"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+        >
           We offer a comprehensive range of cleaning services for both
           residential and commercial properties. All our services include free
           walkthroughs or estimates to ensure accurate pricing.
-        </p>
+        </motion.p>
 
         <div className="space-y-16">
-          {services.map((category) => (
-            <div key={category.category}>
-              <h2 className="mb-8 text-2xl font-bold">{category.category}</h2>
-              <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-                {category.items.map((service) => (
-                  <Card key={service.title}>
-                    <CardHeader>
-                      <CardTitle className="text-xl">{service.title}</CardTitle>
-                    </CardHeader>
-                    <CardContent>
-                      {service.duration && (
-                        <div className="mb-4 flex items-center gap-2 text-sm">
-                          <Clock className="h-4 w-4 text-primary" />
-                          <span>{service.duration}</span>
-                          {service.pricing && ` - ${service.pricing}`}
-                        </div>
-                      )}
-                      <ul className="space-y-2">
-                        {service.features.map((feature) => (
-                          <li key={feature} className="flex items-start gap-2">
-                            <Check className="mt-1 h-4 w-4 shrink-0 text-primary" />
-                            <span className="text-sm text-muted-foreground">
-                              {feature}
-                            </span>
-                          </li>
-                        ))}
-                      </ul>
-                    </CardContent>
-                  </Card>
-                ))}
-              </div>
-            </div>
-          ))}
+          <AnimatePresence mode="popLayout">
+            {services.map((category, categoryIndex) => (
+              <motion.div
+                key={category.category}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                viewport={{ once: false, margin: "-100px" }}
+                transition={{ duration: 0.5, delay: categoryIndex * 0.2 }}
+              >
+                <h2 className="mb-8 text-2xl font-bold">{category.category}</h2>
+                <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+                  <AnimatePresence>
+                    {category.items.map((service, serviceIndex) => (
+                      <motion.div
+                        key={service.title}
+                        initial={{ opacity: 0, scale: 0.95 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        exit={{ opacity: 0, scale: 0.9 }}
+                        viewport={{ once: false, margin: "-50px" }}
+                        transition={{
+                          duration: 0.4,
+                          delay: categoryIndex * 0.1 + serviceIndex * 0.1,
+                        }}
+                        whileHover={{ scale: 1.02 }}
+                      >
+                        <Card>
+                          <CardHeader>
+                            <CardTitle className="text-xl">
+                              {service.title}
+                            </CardTitle>
+                          </CardHeader>
+                          <CardContent>
+                            {service.duration && (
+                              <div className="mb-4 flex items-center gap-2 text-sm">
+                                <Clock className="h-4 w-4 text-primary" />
+                                <span>{service.duration}</span>
+                                {service.pricing && ` - ${service.pricing}`}
+                              </div>
+                            )}
+                            <ul className="space-y-2">
+                              {service.features.map((feature) => (
+                                <li
+                                  key={feature}
+                                  className="flex items-start gap-2"
+                                >
+                                  <Check className="mt-1 h-4 w-4 shrink-0 text-primary" />
+                                  <span className="text-sm text-muted-foreground">
+                                    {feature}
+                                  </span>
+                                </li>
+                              ))}
+                            </ul>
+                          </CardContent>
+                        </Card>
+                      </motion.div>
+                    ))}
+                  </AnimatePresence>
+                </div>
+              </motion.div>
+            ))}
+          </AnimatePresence>
         </div>
       </div>
     </main>

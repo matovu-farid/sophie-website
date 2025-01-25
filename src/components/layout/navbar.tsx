@@ -19,6 +19,13 @@ export function Navbar() {
         </Link>
         <NavigationMenu>
           <NavigationMenuList className="flex gap-6">
+          <NavigationMenuItem>
+              <Link href="/" legacyBehavior passHref>
+                <NavigationMenuLink className="hover:text-primary">
+                  Home
+                </NavigationMenuLink>
+              </Link>
+            </NavigationMenuItem>
             <NavigationMenuItem>
               <Link href="/services" legacyBehavior passHref>
                 <NavigationMenuLink className="hover:text-primary">
