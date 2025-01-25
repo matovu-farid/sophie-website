@@ -142,7 +142,7 @@ export default function HomePage() {
                     opacity: 0,
                     x: 0,
                     y: 20,
-                    ...(window.innerWidth >= 768 && {
+                    ...(typeof window !== "undefined" && window.innerWidth >= 768 && {
                       x: index === 0 ? -20 : 20,
                       y: 0,
                     }),
@@ -156,7 +156,7 @@ export default function HomePage() {
                     opacity: 0,
                     x: 0,
                     y: -20,
-                    ...(window.innerWidth >= 768 && {
+                    ...(typeof window !== "undefined" && window.innerWidth >= 768 && {
                       x: index === 0 ? -20 : 20,
                       y: 0,
                     }),
