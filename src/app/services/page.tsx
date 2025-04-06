@@ -2,6 +2,7 @@
 import { Clock, Check } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 import Image from "next/image";
+import { Skeleton } from "src/components/ui/skeleton";
 import {
   Card,
   CardContent,
@@ -247,29 +248,34 @@ export default function ServicesPage() {
                                       <p className="mb-1 text-sm font-medium">
                                         Before
                                       </p>
-                                      <Image
-                                        src={service.images.before}
-                                        alt={`${service.title} before`}
-                                        width={500}
-                                        height={300}
-                                        className="rounded-lg object-cover"
-                                      />
+                                      <div className="relative h-[300px] w-full">
+                                        <Skeleton className="absolute inset-0" />
+                                        <Image
+                                          src={service.images.before}
+                                          alt={`${service.title} before`}
+                                          fill
+                                          className="rounded-lg object-cover"
+                                        />
+                                      </div>
                                     </div>
                                     <div>
                                       <p className="mb-1 text-sm font-medium">
                                         After
                                       </p>
-                                      <Image
-                                        src={service.images.after}
-                                        alt={`${service.title} after`}
-                                        width={500}
-                                        height={300}
-                                        className="rounded-lg object-cover"
-                                      />
+                                      <div className="relative h-[300px] w-full">
+                                        <Skeleton className="absolute inset-0" />
+                                        <Image
+                                          src={service.images.after}
+                                          alt={`${service.title} after`}
+                                          fill
+                                          className="rounded-lg object-cover"
+                                        />
+                                      </div>
                                     </div>
                                   </div>
                                 ) : (
-                                  <div>
+                                  <div className="relative h-[300px] w-full">
+                                    <Skeleton className="absolute inset-0" />
                                     <Image
                                       src={
                                         service.images.after ??
@@ -277,8 +283,7 @@ export default function ServicesPage() {
                                         "/images/placeholder.jpg"
                                       }
                                       alt={service.title}
-                                      width={500}
-                                      height={300}
+                                      fill
                                       className="rounded-lg object-cover"
                                     />
                                   </div>
