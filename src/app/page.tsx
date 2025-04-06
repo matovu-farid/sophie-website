@@ -17,19 +17,40 @@ export default function HomePage() {
     <AnimationProvider>
       <main>
         {/* Hero Section */}
-        <section className="bg-gradient-to-b from-white to-gray-50 py-20">
-          <div className="container">
+        <section className="relative flex min-h-[80vh] items-center overflow-hidden bg-gradient-to-b from-white to-gray-50">
+          <motion.div
+            className="absolute inset-0 z-0"
+            initial={{ opacity: 0, scale: 1.1 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{
+              duration: 1.2,
+              ease: "easeOut",
+            }}
+            style={{
+              backgroundImage: "url('/images/abia-landing-header.png')",
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+              backgroundRepeat: "no-repeat",
+            }}
+          />
+          <motion.div
+            className="absolute inset-0 z-0 bg-black/40"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1 }}
+          />
+          <div className="container relative z-10">
             <motion.div
-              className="max-w-3xl"
+              className="mx-auto max-w-3xl text-center"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.6 }}
             >
-              <h1 className="mb-4 text-5xl font-bold tracking-tight">
+              <h1 className="mb-4 text-6xl font-bold tracking-tight text-white">
                 Your Cleaning Needs—Our Priority
               </h1>
-              <p className="mb-8 text-xl text-muted-foreground">
+              <p className="mb-8 text-xl text-gray-200">
                 We offer professional residential and commercial cleaning
                 services personalized to your unique requirements. Our flexible
                 scheduling, in-person walkthroughs, and transparent pricing
@@ -40,11 +61,17 @@ export default function HomePage() {
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
                 transition={{ delay: 0.3, duration: 0.5 }}
+                className="flex justify-center gap-4"
               >
-                <Button size="lg" asChild className="mr-4">
+                <Button size="lg" asChild>
                   <Link href="/quote">Get a Free Quote</Link>
                 </Button>
-                <Button size="lg" variant="outline" asChild>
+                <Button
+                  size="lg"
+                  variant="outline"
+                  asChild
+                  className="border-white/20 bg-white/10 text-white hover:bg-white/20"
+                >
                   <Link href="/services">Our Services</Link>
                 </Button>
               </motion.div>
@@ -116,7 +143,7 @@ export default function HomePage() {
         <section className="bg-gray-50 py-20">
           <div className="container">
             <motion.h2
-              className="mb-12 text-center text-3xl font-bold"
+              className="mb-12 text-center text-4xl font-bold"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               exit={{ opacity: 0 }}
@@ -129,11 +156,13 @@ export default function HomePage() {
                   title: "Residential Cleaning",
                   description:
                     "Keep your apartment or house pristine with our thorough, eco-friendly cleaning methods. We handle everything from kitchens and bathrooms to living spaces and bedrooms—so you can come home to a fresh, clean environment every day.",
+                  image: "/images/residential-cleaning.png",
                 },
                 {
                   title: "Commercial Cleaning",
                   description:
                     "Our commercial cleaning services keep your office or business space tidy and professional. From lobbies and common areas to break rooms and private offices, we ensure your workspace is both welcoming and productive.",
+                  image: "/images/commercial-cleaning.png",
                 },
               ].map((service, index) => (
                 <motion.div
@@ -142,10 +171,11 @@ export default function HomePage() {
                     opacity: 0,
                     x: 0,
                     y: 20,
-                    ...(typeof window !== "undefined" && window.innerWidth >= 768 && {
-                      x: index === 0 ? -20 : 20,
-                      y: 0,
-                    }),
+                    ...(typeof window !== "undefined" &&
+                      window.innerWidth >= 768 && {
+                        x: index === 0 ? -20 : 20,
+                        y: 0,
+                      }),
                   }}
                   whileInView={{
                     opacity: 1,
@@ -156,14 +186,22 @@ export default function HomePage() {
                     opacity: 0,
                     x: 0,
                     y: -20,
-                    ...(typeof window !== "undefined" && window.innerWidth >= 768 && {
-                      x: index === 0 ? -20 : 20,
-                      y: 0,
-                    }),
+                    ...(typeof window !== "undefined" &&
+                      window.innerWidth >= 768 && {
+                        x: index === 0 ? -20 : 20,
+                        y: 0,
+                      }),
                   }}
                   transition={{ duration: 0.5 }}
                 >
-                  <Card className="bg-white">
+                  <Card className="overflow-hidden bg-white">
+                    <div className="relative h-64 w-full">
+                      <img
+                        src={service.image}
+                        alt={service.title}
+                        className="h-full w-full object-cover"
+                      />
+                    </div>
                     <CardHeader>
                       <CardTitle>{service.title}</CardTitle>
                     </CardHeader>
@@ -206,22 +244,48 @@ export default function HomePage() {
         </section>
 
         {/* CTA Section */}
-        <section className="bg-primary py-20 text-primary-foreground">
-          <div className="container text-center">
+        <section className="relative overflow-hidden py-32 text-white">
+          <motion.div
+            className="absolute inset-0 z-0"
+            initial={{ opacity: 0, scale: 1.1 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{
+              duration: 1.2,
+              ease: "easeOut",
+            }}
+            style={{
+              backgroundImage: "url('/images/footer.png')",
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+              backgroundRepeat: "no-repeat",
+            }}
+          />
+          <motion.div
+            className="absolute inset-0 z-0 bg-black/30 backdrop-blur-sm"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1 }}
+          />
+          <div className="container relative z-10 text-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
             >
-              <h2 className="mb-6 text-3xl font-bold text-white">
+              <h2 className="mb-6 text-4xl font-bold text-white">
                 Discover the Abia Cleaning Difference
               </h2>
-              <p className="mx-auto mb-8 max-w-2xl text-xl">
+              <p className="mx-auto mb-8 max-w-2xl text-xl text-gray-100">
                 Our goal is simple: Provide consistent, high-quality cleaning at
                 a fair price. Let us handle the mess so you can focus on what
                 matters most.
               </p>
-              <Button size="lg" variant="secondary" asChild>
+              <Button
+                size="lg"
+                variant="secondary"
+                asChild
+                className="border-white/10 bg-white/20 font-extrabold text-white shadow-2xl backdrop-blur-sm hover:bg-white/30"
+              >
                 <Link href="/contact">Contact Us Today</Link>
               </Button>
             </motion.div>

@@ -15,6 +15,10 @@ interface Service {
     duration: string;
     pricing?: string;
     features: string[];
+    images?: {
+      before?: string;
+      after?: string;
+    };
   }[];
 }
 
@@ -31,6 +35,9 @@ export default function ServicesPage() {
             "Specialized cleaning protocols",
             "Flexible scheduling",
           ],
+          images: {
+            after: "/images/services/education-centres.png",
+          },
         },
         {
           title: "Facilities Cleaning",
@@ -40,6 +47,9 @@ export default function ServicesPage() {
             "Customized cleaning plans",
             "Professional equipment",
           ],
+          images: {
+            after: "/images/services/facility-cleaning.png",
+          },
         },
       ],
     },
@@ -54,6 +64,10 @@ export default function ServicesPage() {
             "Duration varies by property size",
             "Deep cleaning included",
           ],
+          images: {
+            before: "/images/services/living_room_before.jpg",
+            after: "/images/services/living_room_after.jpg",
+          },
         },
         {
           title: "Recurring Services",
@@ -63,6 +77,10 @@ export default function ServicesPage() {
             "Weekly, bi-weekly, or monthly options",
             "Consistent cleaning team",
           ],
+          images: {
+            before: "/images/services/dining_room_before.jpg",
+            after: "/images/services/dining_room_after.jpg",
+          },
         },
         {
           title: "Complete House Cleaning",
@@ -72,6 +90,10 @@ export default function ServicesPage() {
             "Comprehensive cleaning",
             "All rooms included",
           ],
+          images: {
+            before: "/images/services/kitchen_and_dining_area_before.jpg",
+            after: "/images/services/kitchen_and_dining_area_after.jpg",
+          },
         },
       ],
     },
@@ -82,6 +104,10 @@ export default function ServicesPage() {
           title: "Living Area",
           duration: "1.5 hours",
           features: ["Free estimates", "Detailed dusting", "Floor care"],
+          images: {
+            before: "/images/services/living_room_before.jpg",
+            after: "/images/services/living_room_after.jpg",
+          },
         },
         {
           title: "Bedroom",
@@ -91,6 +117,10 @@ export default function ServicesPage() {
             "Linen change available",
             "Surface cleaning",
           ],
+          images: {
+            after: "/images/services/bedroom_after.jpeg",
+            before: "/images/services/bedroom_before.jpeg",
+          },
         },
         {
           title: "Bathrooms",
@@ -100,6 +130,10 @@ export default function ServicesPage() {
             "Deep sanitization",
             "Tile and grout cleaning",
           ],
+          images: {
+            before: "/images/services/bathroom_before.jpeg",
+            after: "/images/services/bathroom_after.jpeg",
+          },
         },
       ],
     },
@@ -111,12 +145,20 @@ export default function ServicesPage() {
           duration: "1 hour",
           pricing: "$50/hour",
           features: ["Deep cleaning", "Sanitization", "Organization"],
+          images: {
+            before: "/images/services/fridge_before.jpg",
+            after: "/images/services/fridge_after.jpg",
+          },
         },
         {
           title: "Inside Oven Cleaning",
           duration: "1 hour",
           pricing: "$50/hour",
           features: ["Deep cleaning", "Degreasing", "Removal of burnt residue"],
+          images: {
+            before: "/images/services/kitchen_stove_before.jpeg",
+            after: "/images/services/kitchen_stove_after.jpeg",
+          },
         },
         {
           title: "Extra Services",
@@ -193,6 +235,46 @@ export default function ServicesPage() {
                                 <Clock className="h-4 w-4 text-primary" />
                                 <span>{service.duration}</span>
                                 {service.pricing && ` - ${service.pricing}`}
+                              </div>
+                            )}
+                            {service.images && (
+                              <div className="mb-4 space-y-2">
+                                {service.images.before &&
+                                service.images.after ? (
+                                  <div className="grid grid-cols-2 gap-2">
+                                    <div>
+                                      <p className="mb-1 text-sm font-medium">
+                                        Before
+                                      </p>
+                                      <img
+                                        src={service.images.before}
+                                        alt={`${service.title} before`}
+                                        className="rounded-lg object-cover"
+                                      />
+                                    </div>
+                                    <div>
+                                      <p className="mb-1 text-sm font-medium">
+                                        After
+                                      </p>
+                                      <img
+                                        src={service.images.after}
+                                        alt={`${service.title} after`}
+                                        className="rounded-lg object-cover"
+                                      />
+                                    </div>
+                                  </div>
+                                ) : (
+                                  <div>
+                                    <img
+                                      src={
+                                        service.images.after ??
+                                        service.images.before
+                                      }
+                                      alt={service.title}
+                                      className="rounded-lg object-cover"
+                                    />
+                                  </div>
+                                )}
                               </div>
                             )}
                             <ul className="space-y-2">
