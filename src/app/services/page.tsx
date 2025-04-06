@@ -2,7 +2,7 @@
 import { Clock, Check } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 import Image from "next/image";
-import { Skeleton } from "src/components/ui/skeleton";
+import { SkeletonCard } from "src/components/ui/skeleton-card";
 import {
   Card,
   CardContent,
@@ -249,7 +249,7 @@ export default function ServicesPage() {
                                         Before
                                       </p>
                                       <div className="relative h-[300px] w-full">
-                                        <Skeleton className="absolute inset-0" />
+                                        <SkeletonCard imageHeight="h-[300px]" />
                                         <Image
                                           src={service.images.before}
                                           alt={`${service.title} before`}
@@ -263,7 +263,7 @@ export default function ServicesPage() {
                                         After
                                       </p>
                                       <div className="relative h-[300px] w-full">
-                                        <Skeleton className="absolute inset-0" />
+                                        <SkeletonCard imageHeight="h-[300px]" />
                                         <Image
                                           src={service.images.after}
                                           alt={`${service.title} after`}
@@ -275,7 +275,7 @@ export default function ServicesPage() {
                                   </div>
                                 ) : (
                                   <div className="relative h-[300px] w-full">
-                                    <Skeleton className="absolute inset-0" />
+                                    <SkeletonCard imageHeight="h-[300px]" />
                                     <Image
                                       src={
                                         service.images.after ??
