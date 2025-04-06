@@ -1,6 +1,7 @@
 "use client";
 import { Clock, Check } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
+import Image from "next/image";
 import {
   Card,
   CardContent,
@@ -246,9 +247,11 @@ export default function ServicesPage() {
                                       <p className="mb-1 text-sm font-medium">
                                         Before
                                       </p>
-                                      <img
+                                      <Image
                                         src={service.images.before}
                                         alt={`${service.title} before`}
+                                        width={500}
+                                        height={300}
                                         className="rounded-lg object-cover"
                                       />
                                     </div>
@@ -256,21 +259,26 @@ export default function ServicesPage() {
                                       <p className="mb-1 text-sm font-medium">
                                         After
                                       </p>
-                                      <img
+                                      <Image
                                         src={service.images.after}
                                         alt={`${service.title} after`}
+                                        width={500}
+                                        height={300}
                                         className="rounded-lg object-cover"
                                       />
                                     </div>
                                   </div>
                                 ) : (
                                   <div>
-                                    <img
+                                    <Image
                                       src={
                                         service.images.after ??
-                                        service.images.before
+                                        service.images.before ??
+                                        "/images/placeholder.jpg"
                                       }
                                       alt={service.title}
+                                      width={500}
+                                      height={300}
                                       className="rounded-lg object-cover"
                                     />
                                   </div>

@@ -2,6 +2,7 @@
 
 import { Button } from "src/components/ui/button";
 import Link from "next/link";
+import Image from "next/image";
 import {
   Card,
   CardContent,
@@ -196,10 +197,11 @@ export default function HomePage() {
                 >
                   <Card className="overflow-hidden bg-white">
                     <div className="relative h-64 w-full">
-                      <img
+                      <Image
                         src={service.image}
                         alt={service.title}
-                        className="h-full w-full object-cover"
+                        fill
+                        className="object-cover"
                       />
                     </div>
                     <CardHeader>
