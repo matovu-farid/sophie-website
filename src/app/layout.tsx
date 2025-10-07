@@ -30,14 +30,12 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL("https://abiacleaning.com"),
   alternates: {
     canonical: "/",
   },
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://abiacleaning.com",
     title: "Abia Cleaning Services | Billerica, MA",
     description:
       "Professional cleaning services in Billerica, MA. Residential & commercial cleaning with free estimates. Call (978) 437-3728 today!",
@@ -84,11 +82,10 @@ export default function RootLayout({
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    "@id": "https://abiacleaning.com/#organization",
+    "@id": "#organization",
     name: "Abia Cleaning Services LLC",
     description:
       "Professional cleaning services in Billerica, MA. Residential & commercial cleaning with free estimates. Call (978) 437-3728 today!",
-    url: "https://abiacleaning.com",
     telephone: "+1-978-437-3728",
     address: {
       "@type": "PostalAddress",
