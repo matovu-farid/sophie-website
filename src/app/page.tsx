@@ -50,13 +50,15 @@ export default function HomePage() {
               transition={{ duration: 0.6 }}
             >
               <h1 className="mb-4 text-6xl font-bold tracking-tight text-white">
-                Your Cleaning Needs—Our Priority
+                Professional Cleaning Services in Billerica, MA
               </h1>
               <p className="mb-8 text-xl text-gray-200">
-                We offer professional residential and commercial cleaning
-                services personalized to your unique requirements. Our flexible
-                scheduling, in-person walkthroughs, and transparent pricing
-                ensure that you get just what you need at a price you can trust.
+                Abia Cleaning Services LLC provides professional residential and
+                commercial cleaning services in Billerica, MA and surrounding
+                areas. Our customized cleaning plans, flexible scheduling, and
+                in-person walkthroughs ensure you get exactly what you need at a
+                fair, transparent price. Trusted by homeowners and businesses
+                throughout the region.
               </p>
               <motion.div
                 initial={{ opacity: 0 }}
@@ -90,7 +92,7 @@ export default function HomePage() {
               whileInView={{ opacity: 1 }}
               exit={{ opacity: 0 }}
             >
-              Why Choose Abia Cleaning Services LLC?
+              Why Choose Abia Cleaning Services LLC in Billerica, MA?
             </motion.h2>
             <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
               {[
@@ -150,7 +152,7 @@ export default function HomePage() {
               whileInView={{ opacity: 1 }}
               exit={{ opacity: 0 }}
             >
-              Our Services
+              Professional Cleaning Services in Billerica, MA
             </motion.h2>
             <div className="grid gap-8 md:grid-cols-2">
               {[
@@ -232,18 +234,85 @@ export default function HomePage() {
               viewport={{ once: false, margin: "-100px" }}
             >
               <h2 className="mb-6 text-3xl font-bold">
-                Pricing Tailored to You
+                Transparent Pricing for Cleaning Services in Billerica, MA
               </h2>
               <p className="mb-8 text-lg text-muted-foreground">
-                We believe in fair, upfront pricing. That&apos;s why we schedule
-                an in-person walkthrough of your property before providing a
-                quote. Our pricing considers square footage, specific cleaning
-                needs, and any special circumstances.
+                We believe in fair, upfront pricing for all our cleaning
+                services. That&apos;s why we schedule an in-person walkthrough
+                of your property before providing a quote. Our pricing considers
+                square footage, specific cleaning needs, and any special
+                circumstances. Get your free estimate today!
               </p>
               <Button size="lg" asChild>
-                <Link href="/quote">Schedule a Walkthrough</Link>
+                <Link href="/quote">Get Free Quote</Link>
               </Button>
             </motion.div>
+          </div>
+        </section>
+
+        {/* FAQ Section */}
+        <section className="bg-gray-50 py-20">
+          <div className="container">
+            <motion.h2
+              className="mb-12 text-center text-4xl font-bold"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+            >
+              Frequently Asked Questions
+            </motion.h2>
+            <div className="mx-auto max-w-3xl space-y-6">
+              {[
+                {
+                  question: "What areas do you serve for cleaning services?",
+                  answer:
+                    "We provide professional cleaning services throughout Billerica, MA and surrounding areas including Burlington, Tewksbury, Chelmsford, and Lowell.",
+                },
+                {
+                  question:
+                    "Do you offer both residential and commercial cleaning?",
+                  answer:
+                    "Yes! We specialize in both residential cleaning for homes and apartments, and commercial cleaning for offices, education centers, and other business facilities.",
+                },
+                {
+                  question: "How much do your cleaning services cost?",
+                  answer:
+                    "Our pricing is customized based on your specific needs. We provide free in-person walkthroughs to give you an accurate quote with no hidden fees.",
+                },
+                {
+                  question: "Are your cleaning products eco-friendly?",
+                  answer:
+                    "Yes, we use eco-friendly and safe cleaning products that are effective yet gentle on your family and the environment.",
+                },
+                {
+                  question: "Do you bring your own cleaning supplies?",
+                  answer:
+                    "Yes, we provide all cleaning supplies and equipment needed for your cleaning service. You don't need to provide anything.",
+                },
+                {
+                  question: "How do I schedule a cleaning service?",
+                  answer:
+                    "Contact us at (978) 437-3728 or email abiacleaningservices@gmail.com to schedule your free walkthrough and get a personalized quote.",
+                },
+              ].map((faq, index) => (
+                <motion.div
+                  key={faq.question}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -20 }}
+                  transition={{ delay: index * 0.1 }}
+                >
+                  <Card>
+                    <CardHeader>
+                      <CardTitle className="text-lg">{faq.question}</CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <p className="text-muted-foreground">{faq.answer}</p>
+                    </CardContent>
+                  </Card>
+                </motion.div>
+              ))}
+            </div>
           </div>
         </section>
 
