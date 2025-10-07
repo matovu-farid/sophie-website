@@ -2,10 +2,9 @@ import type { Metadata } from "next";
 import { ServicesClient } from "./services-client";
 
 export const metadata: Metadata = {
-  title:
-    "Cleaning Services - Residential & Commercial Cleaning in Billerica, MA",
+  title: "Cleaning Services - Billerica, MA",
   description:
-    "Comprehensive cleaning services including residential cleaning, commercial cleaning, move-in/out cleaning, and specialized services in Billerica, MA. Free estimates available.",
+    "Residential & commercial cleaning services in Billerica, MA. Move-in/out, recurring cleaning & more. Free estimates! Call (978) 437-3728.",
   keywords: [
     "cleaning services Billerica MA",
     "residential cleaning services",
@@ -18,10 +17,9 @@ export const metadata: Metadata = {
     "cleaning services near me",
   ],
   openGraph: {
-    title:
-      "Cleaning Services - Residential & Commercial Cleaning in Billerica, MA",
+    title: "Cleaning Services - Billerica, MA",
     description:
-      "Comprehensive cleaning services including residential cleaning, commercial cleaning, move-in/out cleaning, and specialized services in Billerica, MA. Free estimates available.",
+      "Residential & commercial cleaning services in Billerica, MA. Move-in/out, recurring cleaning & more. Free estimates! Call (978) 437-3728.",
     images: [
       {
         url: "/images/services/living_room_after.jpg",

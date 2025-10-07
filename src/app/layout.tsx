@@ -5,12 +5,11 @@ import { Navbar } from "src/components/layout/navbar";
 
 export const metadata: Metadata = {
   title: {
-    default:
-      "Abia Cleaning Services LLC | Professional Cleaning Services in Billerica, MA",
-    template: "%s | Abia Cleaning Services LLC",
+    default: "Abia Cleaning Services | Billerica, MA",
+    template: "%s | Abia Cleaning Services",
   },
   description:
-    "Professional residential and commercial cleaning services in Billerica, MA. Customized cleaning plans, transparent pricing, and flexible scheduling. Get your free quote today!",
+    "Professional cleaning services in Billerica, MA. Residential & commercial cleaning with free estimates. Call (978) 437-3728 today!",
   keywords: [
     "cleaning services Billerica MA",
     "residential cleaning",
@@ -39,11 +38,10 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: "https://abiacleaning.com",
-    title:
-      "Abia Cleaning Services LLC | Professional Cleaning Services in Billerica, MA",
+    title: "Abia Cleaning Services | Billerica, MA",
     description:
-      "Professional residential and commercial cleaning services in Billerica, MA. Customized cleaning plans, transparent pricing, and flexible scheduling.",
-    siteName: "Abia Cleaning Services LLC",
+      "Professional cleaning services in Billerica, MA. Residential & commercial cleaning with free estimates. Call (978) 437-3728 today!",
+    siteName: "Abia Cleaning Services",
     images: [
       {
         url: "/images/abia-landing-header.png",
@@ -55,10 +53,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title:
-      "Abia Cleaning Services LLC | Professional Cleaning Services in Billerica, MA",
+    title: "Abia Cleaning Services | Billerica, MA",
     description:
-      "Professional residential and commercial cleaning services in Billerica, MA. Customized cleaning plans, transparent pricing, and flexible scheduling.",
+      "Professional cleaning services in Billerica, MA. Residential & commercial cleaning with free estimates. Call (978) 437-3728 today!",
     images: ["/images/abia-landing-header.png"],
   },
   robots: {
@@ -90,7 +87,7 @@ export default function RootLayout({
     "@id": "https://abiacleaning.com/#organization",
     name: "Abia Cleaning Services LLC",
     description:
-      "Professional residential and commercial cleaning services in Billerica, MA. Customized cleaning plans, transparent pricing, and flexible scheduling.",
+      "Professional cleaning services in Billerica, MA. Residential & commercial cleaning with free estimates. Call (978) 437-3728 today!",
     url: "https://abiacleaning.com",
     telephone: "+1-978-437-3728",
     address: {

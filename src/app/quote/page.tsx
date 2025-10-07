@@ -2,9 +2,9 @@ import { redirect } from "next/navigation";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Get Free Cleaning Quote - Abia Cleaning Services Billerica, MA",
+  title: "Free Cleaning Quote - Billerica, MA",
   description:
-    "Get a free, no-obligation cleaning quote from Abia Cleaning Services. We offer in-person walkthroughs for accurate pricing on residential and commercial cleaning in Billerica, MA.",
+    "Get a free cleaning quote in Billerica, MA! In-person walkthroughs for accurate pricing. Call (978) 437-3728 today.",
   keywords: [
     "free cleaning quote Billerica MA",
     "cleaning services estimate",
@@ -14,9 +14,9 @@ export const metadata: Metadata = {
     "free cleaning consultation",
   ],
   openGraph: {
-    title: "Get Free Cleaning Quote - Abia Cleaning Services Billerica, MA",
+    title: "Free Cleaning Quote - Billerica, MA",
     description:
-      "Get a free, no-obligation cleaning quote from Abia Cleaning Services. We offer in-person walkthroughs for accurate pricing on residential and commercial cleaning in Billerica, MA.",
+      "Get a free cleaning quote in Billerica, MA! In-person walkthroughs for accurate pricing. Call (978) 437-3728 today.",
     type: "website",
   },
   alternates: {
